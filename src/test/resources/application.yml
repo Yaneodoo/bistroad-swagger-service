@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: "swagger-service"
+  cloud:
+    kubernetes:
+      enabled: false
+swagger:
+  config:
+    refresh-rate: 5000
