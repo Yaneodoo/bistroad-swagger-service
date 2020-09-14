@@ -1,4 +1,4 @@
-package kr.bistroad.swaggerservice
+package kr.bistroad.swaggerservice.servicedefinition.domain
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory
 import org.springframework.context.annotation.Scope

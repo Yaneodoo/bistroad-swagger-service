@@ -1,7 +1,8 @@
-package kr.bistroad.swaggerservice
+package kr.bistroad.swaggerservice.servicedefinition.application
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
+import kr.bistroad.swaggerservice.servicedefinition.domain.ServiceDefinitionsContext
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.cloud.client.ServiceInstance
 import org.springframework.cloud.client.discovery.DiscoveryClient
