@@ -16,9 +16,7 @@ import org.springframework.web.client.getForObject
 class ServiceDescriptionUpdater(
     private val discoveryClient: DiscoveryClient,
     private val serviceDefinitionsContext: ServiceDefinitionsContext,
-
-    @Value("\${spring.application.name}")
-    private val swaggerServiceId: String
+    private val swaggerServicesConfig: SwaggerServicesConfig
 ) {
     private val restTemplate: RestTemplate = RestTemplate()
     private val objectMapper: ObjectMapper = ObjectMapper()
@@ -26,7 +24,7 @@ class ServiceDescriptionUpdater(
     @Scheduled(fixedDelayString = "\${swagger.config.refresh-rate}")
     fun refreshSwaggerConfigurations() =
         discoveryClient.services
-            .filter { it != swaggerServiceId }
+            .filter { it in swaggerServicesConfig.services }
             .map(discoveryClient::getInstances)
             .filter { it != null && it.isNotEmpty() }
             .forEach { instances ->

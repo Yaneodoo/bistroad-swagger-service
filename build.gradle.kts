@@ -4,6 +4,7 @@ plugins {
     id("org.springframework.boot") version "2.3.3.RELEASE"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     kotlin("jvm") version "1.3.72"
+    kotlin("kapt") version "1.3.72"
     kotlin("plugin.spring") version "1.3.72"
 }
 
@@ -26,6 +27,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+    kapt("org.springframework.boot:spring-boot-configuration-processor")
 
     // Spring Cloud Kubernetes
     implementation("org.springframework.cloud:spring-cloud-starter-kubernetes:1.1.4.RELEASE")

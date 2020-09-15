@@ -8,3 +8,4 @@ spring:
 swagger:
   config:
     refresh-rate: 5000
+    services: [ ]

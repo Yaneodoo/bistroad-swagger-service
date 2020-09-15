@@ -7,3 +7,6 @@ spring:
 swagger:
   config:
     refresh-rate: 5000
+    services:
+      - test-service
+      - test2-service
